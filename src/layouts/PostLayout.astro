@@ -16,6 +16,7 @@ import NeoDBCard from '@/components/ui/NeoDBCard.astro'
 import XPOST from '@/components/ui/XPOST.astro'
 import CopyCode from '@/components/ui/CopyCode.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
+import SocialLinks from '@/components/ui/SocialLinks.astro'
 
 import { themeConfig } from '@/config'
 
@@ -44,6 +45,9 @@ const ogImage = `/open-graph/${postSlug}.png`
         {themeConfig.post.toc && <TableOfContents toc={toc} />}
         <div class="title">
           <h1>{title}</h1>
+          <div class="post-social">
+            <SocialLinks variant="icons" />
+          </div>
           <div class="date">
             <FormattedDate date={pubDate} context="post" />
             {
@@ -80,5 +84,8 @@ const ogImage = `/open-graph/${postSlug}.png`
 
   .post-container main {
     flex: 1;
+  }
+  .post-social {
+    margin-top: 0.2rem;
   }
 </style>

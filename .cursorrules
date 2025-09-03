@@ -1,0 +1,3 @@
+ALWAYS USE PNPM
+
+Never run pnpm run build, assume we have a dev server running in another terminal, running pnpm run dev or pnpm build might break things or our environement, so you should never do that.

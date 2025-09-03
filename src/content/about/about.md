@@ -7,10 +7,8 @@ This content will be displayed at the top of the index page.
 You can leave this empty if you don’t want to show any content.
 -->
 
-A static blog theme based on [Astro](https://astro.build), designed for clarity and focus.
+I lead Developer Relations at Inference.net and am obsessed with DX, growth, and virality.
 
-With a deliberately minimal design, this layout ensures your content takes center stage. It's built for flexibility, offering customization options that honor its clean and elegant aesthetic.
+I grew [smry.ai](https://smry.ai) to 1M visitors/mo, and spend my free time thinking about applications of small language models, consumer apps, devtools, and currently b2b/GTM strategies. This blog is partly to share my thoughts with the world, but more importantly to focus them.
 
-Effortlessly share your thoughts in _a calm & dustless space._
-
-Check posts for details and view source on [GitHub](https://github.com/the3ash/astro-chiri).
+Previously I educated developers on information retrieval and AI engineering at KX.

@@ -1,0 +1,129 @@
+---
+import '@phosphor-icons/web/regular'
+
+type Variant = 'pills' | 'icons'
+
+interface Props {
+  variant?: Variant
+}
+
+const { variant = 'pills' } = Astro.props as Props
+
+const LINKS = [
+  {
+    label: 'Twitter',
+    href: 'https://x.com/michael_chomsky',
+    iconLeft: null,
+    iconRight: 'ph-arrow-up-right',
+    external: true
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/mrmps',
+    iconLeft: null,
+    iconRight: 'ph-arrow-up-right',
+    external: true
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/michael-ryaboy-software-engineer/',
+    iconLeft: null,
+    iconRight: 'ph-arrow-up-right',
+    external: true
+  }
+]
+---
+
+{variant === 'pills' && (
+  <div class="pill-links" aria-label="Contact links">
+    {LINKS.map((item) => (
+      <a
+        class="pill"
+        href={item.href}
+        target={item.external ? '_blank' : undefined}
+        rel={item.external ? 'noopener noreferrer' : undefined}
+      >
+        {item.iconLeft && <i class={`ph ${item.iconLeft}`} aria-hidden="true"></i>}
+        <span class="label">{item.label}</span>
+        {item.iconRight && <i class={`ph ${item.iconRight}`} aria-hidden="true"></i>}
+      </a>
+    ))}
+  </div>
+)}
+
+{variant === 'icons' && (
+  <div class="icon-links" aria-label="Contact links">
+    <a href="https://x.com/michael_chomsky" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+      <i class="ph ph-twitter-logo" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/michael-ryaboy-software-engineer/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+    </a>
+  </div>
+)}
+
+<style>
+  .pill-links {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 9999px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.8125rem;
+    line-height: 1;
+    transition: background 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+  }
+
+  .pill:hover {
+    background: var(--selection);
+    border-color: var(--border);
+  }
+
+  .pill .ph {
+    font-size: 0.85em;
+  }
+
+  .pill .label {
+    letter-spacing: var(--spacing-s);
+  }
+
+  .pill .ph:last-child {
+    display: none; /* hide arrow to reduce visual noise */
+  }
+
+  .icon-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-tertiary);
+  }
+
+  .icon-links a {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+  }
+
+  .icon-links a:hover {
+    color: var(--text-secondary);
+  }
+
+  .icon-links .ph {
+    font-size: 1rem;
+  }
+</style>
+
+
