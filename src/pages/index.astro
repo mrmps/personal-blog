@@ -8,7 +8,7 @@ import { getSortedFilteredPosts } from '@/utils/draft'
 const posts = await getSortedFilteredPosts()
 ---
 
-<IndexLayout title={themeConfig.site.title} description={themeConfig.site.description}>
+<IndexLayout title="Hey, I'm Michael" description={themeConfig.site.description}>
   <About />
   <main>
     <PostList posts={posts} />

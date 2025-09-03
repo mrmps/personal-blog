@@ -1,11 +1,14 @@
 ---
 import { themeConfig } from '@/config'
 import ThemeToggle from '@/components/ui/ThemeToggle.astro'
+
+interface Props { title?: string }
+const { title } = Astro.props as Props
 ---
 
 <header>
   <nav>
-    <a href="/">{themeConfig.site.title}</a>
+    <a href="/">{title || themeConfig.site.title}</a>
     <ThemeToggle />
   </nav>
 </header>

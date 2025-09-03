@@ -1,11 +1,14 @@
 ---
 import { themeConfig } from '@/config'
-const today = new Date()
+const currentYear = new Date().getFullYear()
 ---
 
 <footer>
   <div class="footer-content">
-    <div></div>
+    <div class="footer-left">
+      <span>© {currentYear} {themeConfig.site.title}</span>
+      <slot />
+    </div>
   </div>
 </footer>
 <style>
@@ -15,7 +18,9 @@ const today = new Date()
     line-height: 1.75;
     color: var(--text-secondary);
     opacity: 0.75;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
   }
 
   .footer-content {
@@ -27,7 +32,11 @@ const today = new Date()
     width: 100%;
   }
 
-  
+  .footer-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
 
   footer a {
     color: var(--text-secondary);

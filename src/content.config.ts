@@ -14,6 +14,16 @@ const posts = defineCollection({
     })
 })
 
+const images = defineCollection({
+  // Load image files in the `src/content/images/` directory.
+  loader: glob({ base: './src/content/images', pattern: '**/*.{png,jpg,jpeg,gif,svg,webp}' }),
+  // Type-check frontmatter using a schema
+  schema: z.object({
+    alt: z.string().optional(),
+    caption: z.string().optional()
+  })
+})
+
 const about = defineCollection({
   // Load Markdown files in the `src/content/about/` directory.
   loader: glob({ base: './src/content/about', pattern: '**/*.md' }),
@@ -21,4 +31,4 @@ const about = defineCollection({
   schema: z.object({})
 })
 
-export const collections = { posts, about }
+export const collections = { posts, images, about }

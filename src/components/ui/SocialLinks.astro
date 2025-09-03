@@ -34,33 +34,47 @@ const LINKS = [
 ]
 ---
 
-{variant === 'pills' && (
-  <div class="pill-links" aria-label="Contact links">
-    {LINKS.map((item) => (
-      <a
-        class="pill"
-        href={item.href}
-        target={item.external ? '_blank' : undefined}
-        rel={item.external ? 'noopener noreferrer' : undefined}
-      >
-        {item.iconLeft && <i class={`ph ${item.iconLeft}`} aria-hidden="true"></i>}
-        <span class="label">{item.label}</span>
-        {item.iconRight && <i class={`ph ${item.iconRight}`} aria-hidden="true"></i>}
-      </a>
-    ))}
-  </div>
-)}
+{
+  variant === 'pills' && (
+    <div class="pill-links" aria-label="Contact links">
+      {LINKS.map((item) => (
+        <a
+          class="pill"
+          href={item.href}
+          target={item.external ? '_blank' : undefined}
+          rel={item.external ? 'noopener noreferrer' : undefined}
+        >
+          {item.iconLeft && <i class={`ph ${item.iconLeft}`} aria-hidden="true" />}
+          <span class="label">{item.label}</span>
+          {item.iconRight && <i class={`ph ${item.iconRight}`} aria-hidden="true" />}
+        </a>
+      ))}
+    </div>
+  )
+}
 
-{variant === 'icons' && (
-  <div class="icon-links" aria-label="Contact links">
-    <a href="https://x.com/michael_chomsky" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-      <i class="ph ph-twitter-logo" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/michael-ryaboy-software-engineer/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
-    </a>
-  </div>
-)}
+{
+  variant === 'icons' && (
+    <div class="icon-links" aria-label="Contact links">
+      <a
+        href="https://x.com/michael_chomsky"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Twitter"
+      >
+        <i class="ph ph-twitter-logo" aria-hidden="true" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/michael-ryaboy-software-engineer/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <i class="ph ph-linkedin-logo" aria-hidden="true" />
+      </a>
+    </div>
+  )
+}
 
 <style>
   .pill-links {
@@ -82,7 +96,10 @@ const LINKS = [
     text-decoration: none;
     font-size: 0.8125rem;
     line-height: 1;
-    transition: background 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
+    transition:
+      background 0.2s ease-out,
+      color 0.2s ease-out,
+      border-color 0.2s ease-out;
   }
 
   .pill:hover {
@@ -125,5 +142,3 @@ const LINKS = [
     font-size: 1rem;
   }
 </style>
-
-

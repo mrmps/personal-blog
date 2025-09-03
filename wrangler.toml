@@ -1,0 +1,11 @@
+name = "michaelryaboy-blog"
+compatibility_date = "2024-01-15"
+pages_build_output_dir = "dist"
+
+[env.production]
+routes = [
+  { pattern = "michaelryaboy.com", zone_name = "michaelryaboy.com" }
+]
+
+# Note: Images are automatically served via Cloudflare's CDN
+# No additional configuration needed for image optimization
